@@ -55,6 +55,10 @@
       .assetDetailPayment {
         width: 100%;
 
+        img {
+          max-width: 30px;
+        }
+
         td {
           padding: 15px 0;
         }
