@@ -11,7 +11,7 @@ const EulerViewsDetails = () => {
   const [assetDetail, setAssetDetail] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(async () => {
+  const fetchData = async () => {
     setLoading(true);
     const response = await retrievingSingleAsset({
       address,
@@ -19,6 +19,10 @@ const EulerViewsDetails = () => {
     });
     setAssetDetail(response.data);
     setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
   }, [params]);
 
   return (
@@ -65,18 +69,20 @@ const EulerViewsDetails = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {assetDetail.collection.payment_tokens.map((token) => (
-                        <tr className="assetDetailPayment">
-                          <td>
-                            <img src={token.image_url} alt="ethereum" />
-                          </td>
-                          <td>
-                            {parseInt(token.eth_price).toFixed(2)}{" "}
-                            {token.symbol}
-                          </td>
-                          <td>${token.usd_price}</td>
-                        </tr>
-                      ))}
+                      {assetDetail.collection.payment_tokens.map(
+                        (token, index) => (
+                          <tr key={index} className="assetDetailPayment">
+                            <td>
+                              <img src={token.image_url} alt="ethereum" />
+                            </td>
+                            <td>
+                              {parseInt(token.eth_price).toFixed(2)}{" "}
+                              {token.symbol}
+                            </td>
+                            <td>${token.usd_price}</td>
+                          </tr>
+                        )
+                      )}
                     </tbody>
                   </table>
                 )}
