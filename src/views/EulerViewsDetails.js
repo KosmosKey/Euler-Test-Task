@@ -11,19 +11,19 @@ const EulerViewsDetails = () => {
   const [assetDetail, setAssetDetail] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
-    setLoading(true);
-    const response = await retrievingSingleAsset({
-      address,
-      token_id: token,
-    });
-    setAssetDetail(response.data);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const response = await retrievingSingleAsset({
+        address,
+        token_id: token,
+      });
+      setAssetDetail(response.data);
+      setLoading(false);
+    };
+
     fetchData();
-  }, [params]);
+  }, [address, token]);
 
   return (
     <div className="assetDetail">
