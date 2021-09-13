@@ -1,0 +1,26 @@
+.navigationBar {
+  width: 100%;
+  background: #082129;
+  padding: 20px 35px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+
+  h1 {
+    color: #fff;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    background: #26c6c6 !important;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

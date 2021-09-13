@@ -1,0 +1,79 @@
+.assetDetail {
+  flex: 1;
+  background: #082129;
+  padding: 50px 35px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  .loading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .assetDetailOverview {
+    display: flex;
+    width: 100%;
+    flex: 1;
+
+    .assetDetailProfile,
+    .assetDetailProduct {
+      border: 1px solid #fff;
+      border-radius: 8px;
+      height: 100%;
+      padding: 35px;
+    }
+
+    .assetDetailProfile {
+      margin-right: 35px;
+      flex: 0.3;
+
+      h1 {
+        margin: 25px 0;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .assetDetailProfilePicture {
+        height: 300px;
+        border-radius: 50px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    .assetDetailProduct {
+      flex: 0.7;
+
+      table {
+        width: 100%;
+        margin: 35px 0;
+      }
+
+      .assetDetailPayment {
+        width: 100%;
+
+        td {
+          padding: 15px 0;
+        }
+
+        p {
+          margin-left: 15px !important;
+        }
+      }
+    }
+  }
+
+  .assetContract {
+    p {
+      margin: 15px 0;
+
+      span {
+        font-weight: 600;
+        margin-right: 10px;
+      }
+    }
+  }
+}

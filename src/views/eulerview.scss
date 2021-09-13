@@ -1,0 +1,17 @@
+.eulerView {
+  flex: 1;
+  background: #082129;
+  padding: 50px 35px;
+  color: #fff;
+
+  .title {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
